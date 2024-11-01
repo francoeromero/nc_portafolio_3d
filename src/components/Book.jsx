@@ -24,8 +24,8 @@ const easingFactorFold = 0.3; // Controls the speed of the easing
 const insideCurveStrength = 0.18; // Controls the strength of the curve
 const outsideCurveStrength = 0.05; // Controls the strength of the curve
 const turningCurveStrength = 0.09; // Controls the strength of the curve
-
-const PAGE_WIDTH = 1.28;
+// DIMENSIONES REVISTA
+const PAGE_WIDTH = 2.28; //1.28
 const PAGE_HEIGHT = 1.71; // 4:3 aspect ratio
 const PAGE_DEPTH = 0.003;
 const PAGE_SEGMENTS = 30;
@@ -68,7 +68,8 @@ pageGeometry.setAttribute(
 );
 
 const whiteColor = new Color("white");
-const emissiveColor = new Color("orange");
+// HOVER DE LA HOJA 
+const emissiveColor = new Color("black");
 
 const pageMaterials = [
   new MeshStandardMaterial({

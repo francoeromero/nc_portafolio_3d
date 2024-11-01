@@ -3,10 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root{
+  --primary: #59bdeb;
+  --black: #232323;
+}
 #root {
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(#5a47ce, #232323 80%);
+  /* background: radial-gradient(var(--primary), var(--black) 100%); */
+  background: radial-gradient(circle, #ffffff 40%, #000000 80%);
 }
 
 body {
@@ -15,4 +21,79 @@ body {
 
 .outline-text {
   -webkit-text-stroke: 1px white;
+}
+
+
+/* loading page */
+#svg {
+	height: 150px;
+	width: 150px;
+	stroke: rgb(255, 255, 255);
+	fill-opacity: 0;
+	stroke-width: 3px;
+	stroke-dasharray: 4500;
+	animation: draw 8s ease;
+
+
+
+	stroke-width: 5px;
+	fill-rule: evenodd;
+  }
+  
+  @keyframes draw {
+	0% {
+	  stroke-dashoffset: 4500;
+	}
+	100% {
+	  stroke-dashoffset: 0;
+	}
+  }
+  /* barra derecha */
+
+/* Contenedor principal */
+/* Contenedor principal con gradiente */
+.contacto {
+  background-image: linear-gradient(147deg, var(--gradient-uno) 10%, var(--gradient-dos) 75%);
+}
+
+/* Estilos para los textos que aparecen con hover */
+.hidden-on-hover {
+  font-family: 'Poiret One', sans-serif;
+  font-weight: bold;
+  height: 2rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  width: 8.2rem;
+  border-radius: 10px;
+  background-image: linear-gradient(315deg, var(--gradient-dos) 20%, var(--gradient-uno) 74%);
+  color: white;
+  box-shadow: 10px 10px 10px black;
+  margin-right: 0.5rem;
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 1s;
+}
+
+/* Animación para mostrar texto al hacer hover */
+.wp:hover .hidden-on-hover,
+.tel:hover .hidden-on-hover,
+.cv:hover .hidden-on-hover {
+  opacity: 1;
+  animation: aparece 1s;
+}
+
+/* Animación de rotación para los íconos */
+.hover\:rotate:hover {
+  animation: girar 0.7s;
+}
+
+/* Keyframes para animación de rotación */
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(720deg); }
+}
+
+/* Keyframes para animación de aparición */
+@keyframes aparece {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
